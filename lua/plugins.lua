@@ -1,8 +1,29 @@
 return {
 	-- add plugins
   {
+    "nvim-treesitter/nvim-treesitter",
+    branch = 'master',
+    lazy = false,
+    build = ":TSUpdate",
+    ensure_installed = {
+      "c", "lua", "vim",
+      "vimdoc", "query",
+      "markdown",
+      "markdown_inline"
+    },
+    auto_install = true,
+  },
+  {
 		"nvim-lua/plenary.nvim"
 	},
+  {
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    open_mapping = [[c-_]],
+    opts = {
+      --[[ things you want to change go here]]
+    }
+  },
 	{
 		dir = "/Users/kuzekai/WorkSpace/super-commit.nvim"
 	},
